@@ -120,9 +120,9 @@ class ChartsGraphsBetterGoogle extends ChartsGraphsCanvas {
     $data = $this->_get_chart_data();
     $options = $this->_get_chart_options();
     
-  	$js = sprintf("google.load('visualization', '1', {packages:['corechart']});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
+    $js = sprintf("google.load('visualization', '1', {packages:['corechart']});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
         var data = google.visualization.arrayToDataTable([
 %s
         ]);
@@ -138,11 +138,11 @@ class ChartsGraphsBetterGoogle extends ChartsGraphsCanvas {
       $options,
       $type,
       check_plain($chart_id));
-		drupal_add_js($js, 'inline');
+      drupal_add_js($js, 'inline');
 		
-		$html = '<div id="%s-wrapper" class="charts_graphs_google_chart charts_graphs_google_chart_%s"';
-		$html .= ' style="width: ' . $this->width . 'px; height: ' . $this->height . 'px;"';
-		$html .= '></div>';
+      $html = '<div id="%s-wrapper" class="charts_graphs_google_chart charts_graphs_google_chart_%s"';
+      $html .= ' style="width: ' . $this->width . 'px; height: ' . $this->height . 'px;"';
+      $html .= '></div>';
 
     $output = sprintf(
       $html,
